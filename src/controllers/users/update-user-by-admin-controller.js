@@ -23,6 +23,7 @@ const update_user_by_admin = asyncHandler(async (req, res) => {
   user.lastName = lastName ? lastName : user.lastName
   user.status = isActive === true ? 'active' : 'inactive'
   user.dni = dni ? dni : user.dni
+  user.email = email ? email : user.email
 
   if (password) {
     user.password = password
