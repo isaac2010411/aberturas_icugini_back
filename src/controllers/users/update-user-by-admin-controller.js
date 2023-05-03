@@ -10,9 +10,9 @@ const generate_token = require('../../utils/generate-token')
 // @route   PUT /api/users
 // @access  Public
 const update_user_by_admin = asyncHandler(async (req, res) => {
-  const { name, lastName, email, isAdmin, isSuper, password, isActive, dni } = req.body
+  const { name, lastName, email, isAdmin, isSuper, password, isActive, dni, _id } = req.body
 
-  const user = await find_one_user_by_criterial({ email })
+  const user = await find_one_user_by_criterial({ _id })
 
   if (!user) {
     res.status(400)
